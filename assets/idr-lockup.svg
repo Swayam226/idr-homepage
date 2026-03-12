@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="104" viewBox="0 0 520 104" fill="none" role="img" aria-label="Institute of Digital Risk">
+  <defs>
+    <linearGradient id="g" x1="12" y1="8" x2="86" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A3D"/>
+      <stop offset="1" stop-color="#FF6A00"/>
+    </linearGradient>
+  </defs>
+  <!-- icon -->
+  <g transform="translate(0,4)">
+    <path d="M48 10 81 27v42L48 86 15 69V27L48 10Z" fill="none" stroke="url(#g)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M48 10v38l33-21" stroke="url(#g)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M48 48 15 27" stroke="url(#g)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M48 86V48l33 21" stroke="url(#g)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M48 86 15 69V27" stroke="rgba(255,255,255,0.18)" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+
+  <!-- wordmark -->
+  <g transform="translate(110,24)">
+    <text x="0" y="22" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#FF8A3D" letter-spacing="2.2">
+      IDR
+    </text>
+    <text x="0" y="56" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="28" font-weight="700" fill="rgba(255,255,255,0.92)">
+      Institute of Digital Risk
+    </text>
+  </g>
+</svg>
