@@ -57,13 +57,16 @@
             <a class="btn btn--small" href="#contact">Explore Programs</a>
           </div>
         </div>
+        <div class="nav__progress" aria-hidden="true">
+          <div class="nav__progressBar" id="scroll-progress"></div>
+        </div>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero reveal" aria-labelledby="hero-title">
         <div class="container hero__grid">
-          <div class="hero__copy">
+          <div class="hero__copy reveal__item">
             <p class="eyebrow">Industry-led training • Academic collaboration • Real-world deployment</p>
             <h1 id="hero-title">Advancing the Future of Digital Risk.</h1>
             <p class="lead">
@@ -91,8 +94,8 @@
             </dl>
           </div>
 
-          <div class="hero__visual" aria-hidden="true">
-            <div class="cardVisual">
+          <div class="hero__visual reveal__item" aria-hidden="true">
+            <div class="cardVisual cardVisual--glow">
               <div class="cardVisual__top">
                 <div class="miniMark">
                   <img src="./assets/idr-icon.svg" alt="" width="28" height="28" />
@@ -121,9 +124,9 @@
         </div>
       </section>
 
-      <section class="section" id="about" aria-labelledby="about-title">
+      <section class="section reveal" id="about" aria-labelledby="about-title">
         <div class="container twoCol">
-          <div>
+          <div class="reveal__item">
             <h2 id="about-title">About IDR</h2>
             <p>
               The Institute of Digital Risk (IDR) is an <strong>industry-led training and deployment institute</strong>
@@ -135,7 +138,7 @@
               practical capability through projects that reflect modern risk, assurance and AI governance needs.
             </p>
           </div>
-          <div class="callout" role="note" aria-label="What makes IDR different">
+          <div class="callout reveal__item" role="note" aria-label="What makes IDR different">
             <h3>Academic insight, deployed.</h3>
             <p>
               IDR brings together university collaboration, practitioners, and employers to create a repeatable
@@ -151,9 +154,9 @@
         </div>
       </section>
 
-      <section class="section section--alt" id="model" aria-labelledby="model-title">
+      <section class="section section--alt reveal" id="model" aria-labelledby="model-title">
         <div class="container">
-          <div class="sectionHead">
+          <div class="sectionHead reveal__item">
             <h2 id="model-title">Our model</h2>
             <p class="muted">
               A simple, repeatable approach that trains people, supports employers, and advances next‑generation
@@ -162,7 +165,7 @@
           </div>
 
           <div class="cards" role="list">
-            <article class="card" role="listitem">
+            <article class="card reveal__item" role="listitem" data-tilt>
               <h3>Academy</h3>
               <p>Bootcamps and structured pathways for students, early‑career hires, and professionals.</p>
               <ul class="bullets">
@@ -172,7 +175,7 @@
               </ul>
             </article>
 
-            <article class="card" role="listitem">
+            <article class="card reveal__item" role="listitem" data-tilt>
               <h3>Innovation &amp; Incubation</h3>
               <p>Applied research and IP development for emerging threat and model‑risk challenges.</p>
               <ul class="bullets">
@@ -182,7 +185,7 @@
               </ul>
             </article>
 
-            <article class="card" role="listitem">
+            <article class="card reveal__item" role="listitem" data-tilt>
               <h3>Advisory Services</h3>
               <p>Practical support to implement risk frameworks and improve operational resilience.</p>
               <ul class="bullets">
@@ -193,7 +196,7 @@
             </article>
           </div>
 
-          <div class="pipeline" aria-label="Train hire innovate deploy pipeline">
+          <div class="pipeline reveal__item" aria-label="Train hire innovate deploy pipeline">
             <h3 class="pipeline__title">Train → Hire → Innovate → Deploy</h3>
             <ol class="steps">
               <li class="step">
@@ -229,9 +232,9 @@
         </div>
       </section>
 
-      <section class="section" id="community" aria-labelledby="community-title">
+      <section class="section reveal" id="community" aria-labelledby="community-title">
         <div class="container twoCol twoCol--swap">
-          <div class="feature">
+          <div class="feature reveal__item">
             <h2 id="community-title">Community — who we serve</h2>
             <p>
               IDR is built for students, early‑career professionals, and experienced practitioners seeking upskilling
@@ -249,7 +252,7 @@
             </div>
           </div>
 
-          <div class="panel" aria-label="Outcomes">
+          <div class="panel reveal__item" aria-label="Outcomes">
             <h3>Outcomes-first capability</h3>
             <p class="muted">
               Our focus is evidence: clear capability mapping, practical artefacts, and delivery confidence.
@@ -263,9 +266,9 @@
         </div>
       </section>
 
-      <section class="section section--alt" id="contact" aria-labelledby="contact-title">
+      <section class="section section--alt reveal" id="contact" aria-labelledby="contact-title">
         <div class="container twoCol">
-          <div>
+          <div class="reveal__item">
             <h2 id="contact-title">Contact / register interest</h2>
             <p class="muted">
               Tell us what you’re looking for—programs, hiring, partnership, or advisory. We’ll reply to the email you
@@ -276,7 +279,7 @@
             </p>
           </div>
 
-          <form class="form" id="contact-form" novalidate>
+          <form class="form reveal__item" id="contact-form" novalidate>
             <div class="field">
               <label for="name">Name</label>
               <input id="name" name="name" autocomplete="name" required />
@@ -319,6 +322,10 @@
         <p class="footer__meta muted">© <span id="year"></span> IDR. All rights reserved.</p>
       </div>
     </footer>
+
+    <a class="toTop" id="toTop" href="#top" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </a>
 
     <script src="./script.js"></script>
   </body>

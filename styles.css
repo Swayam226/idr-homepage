@@ -108,11 +108,29 @@ a {
   background: rgba(11, 11, 15, 0.72);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
 }
 
 .nav--scrolled {
   background: rgba(11, 11, 15, 0.88);
   border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.nav__progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.nav__progressBar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(255, 106, 0, 0.95), rgba(255, 138, 61, 0.7));
+  box-shadow: 0 0 18px rgba(255, 106, 0, 0.35);
 }
 
 .nav__inner {
@@ -247,7 +265,8 @@ a {
   transition:
     transform 140ms ease,
     filter 140ms ease,
-    box-shadow 140ms ease;
+    box-shadow 140ms ease,
+    border-color 140ms ease;
 }
 
 .btn:hover {
@@ -373,6 +392,33 @@ h1 {
     rgba(18, 18, 26, 0.62);
   padding: 18px;
   box-shadow: var(--shadow);
+  position: relative;
+  isolation: isolate;
+}
+
+.cardVisual--glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 18px;
+  background: conic-gradient(
+    from 180deg,
+    rgba(255, 106, 0, 0.0),
+    rgba(255, 106, 0, 0.35),
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 106, 0, 0.25),
+    rgba(255, 106, 0, 0.0)
+  );
+  filter: blur(14px);
+  opacity: 0.65;
+  z-index: -1;
+  animation: glowSpin 10s linear infinite;
+}
+
+@keyframes glowSpin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .cardVisual__top {
@@ -539,6 +585,31 @@ p {
     transform 140ms ease,
     border-color 140ms ease,
     background 140ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card[data-tilt] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card__shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    420px 220px at var(--mx, 20%) var(--my, 20%),
+    rgba(255, 106, 0, 0.18),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.card[data-tilt]:hover .card__shine {
+  opacity: 1;
 }
 
 .card:hover {
@@ -808,4 +879,63 @@ textarea:focus-visible {
   * {
     transition: none !important;
   }
+  .cardVisual--glow::before {
+    animation: none;
+  }
+}
+
+/* Reveal microinteraction */
+.reveal__item {
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(2px);
+  transition:
+    opacity 420ms ease,
+    transform 420ms ease,
+    filter 420ms ease;
+}
+
+.reveal.is-visible .reveal__item {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Back to top */
+.toTop {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(11, 11, 15, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+  transform: translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+  z-index: 60;
+}
+
+.toTop:hover,
+.toTop:focus-visible {
+  background: rgba(18, 18, 26, 0.9);
+  border-color: rgba(255, 106, 0, 0.35);
+  outline: none;
+}
+
+.toTop.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
